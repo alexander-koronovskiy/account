@@ -3,29 +3,26 @@ import sys
 
 
 def main():
-    base_url = 'https://opt.euroauto.ru'
-    login = base_url + '/user/auth'
+    base_url = 'https://bg.alfabank.ru'
+    login = base_url + '/auth/realms/farzoom-prod/account'
 
-    # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent
-    # для ваших запросов используйте такую форму:
-    #  User-Agent: <название-продукта> / <версия продукта> <комментарий>
+    # User-Agent Forms: <название-продукта> / <версия продукта> <комментарий>
     user_agent = 'nameless-project / 0.0.1 (Python {0})'.format(sys.version[:5])
 
-    # открытие сессии
+    # session open
     session = requests.Session()
 
-    # обновление headers сессии
+    # session headers
     session.headers.update({'User-Agent': user_agent})
 
-    # авторизация
+    # auth
     resp = session.post(login, {
-        'login': '<логин>',
-        'passw': '<пароль>',
-        'recaptcha': '<результат-после-успешного-прохождения-капчи>'})
+        'login': 'ip_gorchakovnn',
+        'password': 'Qwerty6307'})
 
-    # запись ответа в файл
+    # res
     with open('success_login.txt', 'w', encoding='utf-8') as f:
-        f.write(str(resp.json()))
+        f.write(str(resp))
 
 
 if __name__ == "__main__":
