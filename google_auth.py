@@ -1,18 +1,20 @@
-from bs4 import BeautifulSoup
-import requests
+from selenium import webdriver
+import time
 
 
-form_data={'Email': 'you@gmail.com', 'Passwd': 'your_password'}
-post = "https://accounts.google.com/signin/challenge/sl/password"
+def main():
+    driver = webdriver.Safari(executable_path='/usr/bin/safaridriver')
+    url = 'https://bg.alfabank.ru'
 
-with requests.Session() as s:
-    soup = BeautifulSoup(s.get("https://mail.google.com").text, 'lxml')
-    for inp in soup.select("#gaia_loginform input[name]"):
-        if inp["name"] not in form_data:
-            form_data[inp["name"]] = inp["value"]
-    s.post(post, form_data)
-    html = s.get("https://mail.google.com/mail/u/0/#inbox").content
+    driver.get('https://accounts.google.com')
+    email = driver.find_element_by_id('identifierId')
+    email.send_keys('hahaha')
+    next = driver.find_element_by_id('identifierNext')
+    next.click()
+    time.sleep(5)  # думал, может страница не успевает появиться, нет не в этом причина:(
+    passwd = driver.find_elements_by_name('password')
+    passwd.send_keys('*bzZ%tEDsFF6PKBP')
 
-    # запись ответа в файл
-    with open('success_login.txt', 'w', encoding='utf-8') as f:
-        f.write(str(html))
+
+if __name__ == "__main__":
+    main()

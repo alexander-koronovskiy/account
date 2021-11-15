@@ -1,1 +1,96 @@
-<Response [200]>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta http-equiv="content-language" content="ru">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="title" content="Альфа-Банк" />
+    <meta name="description" content="Альфа-Банк" />
+    <link rel="image_src" href="../images/social.jpg" />
+
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Альфа-Банк" />
+    <meta property="og:description" content="Альфа-Банк" />
+    <meta property="og:image" content="../images/social.jpg" />
+    <meta property="og:site_name" content="Альфа-Банк" />
+    <link rel="icon" href="../favicon.png" type="image/x-icon">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Альфа-Банк">
+    <meta name="twitter:description" content="Альфа-Банк">
+    <meta name="twitter:image" content="../images/social.jpg">
+
+    <meta itemprop="name" content="Альфа-Банк" />
+    <meta itemprop="description" content="Альфа-Банк" />
+    <meta itemprop="image" content="../images/social.jpg" />
+
+<title>Альфа-Банк</title>
+<link rel="icon" href="/auth/resources/5bjop/login/alfa-bank/img/favicon.ico" />
+<link href="/auth/resources/5bjop/login/alfa-bank/css/style2.css" rel="stylesheet" />
+<link href="/auth/resources/5bjop/login/alfa-bank/css/style.css" rel="stylesheet" />
+<link href="/auth/resources/5bjop/login/alfa-bank/css/login.css" rel="stylesheet" />
+<link href="/auth/resources/5bjop/login/alfa-bank/css/form.css" rel="stylesheet" />
+</head>
+
+<body class="login-page">
+    <div class="wrapper">
+        <div class="form-block">
+            <form onsubmit="login.disabled = true; return true;" action="https://bg.alfabank.ru/auth/realms/farzoom-prod/login-actions/authenticate?session_code=NgRtbq_VTFwmNuXZbNJiuzJh55R4G46ZuxmIqm86jKE&amp;execution=97e1e0d7-dfc4-41da-bf97-8777f082e8f4&amp;client_id=account&amp;tab_id=thZdsanBohM" method="post">
+                <div class="logo">
+                    <img src="/auth/resources/5bjop/login/alfa-bank/img/alfa-bank-logo.svg" alt="">
+                </div>
+
+                <div class="form-group ">
+                    <div class="input-blocks">
+                        <div class="form-group__row-input">
+                            <label for="username">Имя пользователя</label>
+                            <div class="ib ib-1">
+                                <input id="username" name="username" type="text" class="form-control form-control--login" aria-describedby="login" placeholder="Admin" autocomplete="off" aria-autocomplete="none">
+                            </div>
+                        </div>
+                        <div class="form-group__row-input">
+                            <label for="password">Пароль</label>
+                            <div class="ib ib-2">
+                                <input id="password" name="password" type="password" class="form-control form-control--password" aria-describedby="password" placeholder="Password" autocomplete="off" aria-autocomplete="none">
+                                <a href="#">
+                                    <img src="/auth/resources/5bjop/login/alfa-bank/img/pass-aft-white.svg" alt="">
+                                </a>
+                            </div>
+                            <script type="text/javascript">
+                                const classname = document.querySelector('.ib-2 img');
+                                classname.addEventListener("click", function() {
+                                    const $password = document.getElementById("password");
+                                    if ($password.type === 'password') {
+                                        $password.type = 'text';
+                                    } else {
+                                        $password.type = 'password';
+                                    }
+                                }, false);
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="order">
+                    <button class="" type="submit" name="login" id="kc-login">Вход</button>
+                </div>
+                <div class="forget">
+                </div>
+
+                    <div class="are-new">
+                        <a tabindex="6" href="/auth/realms/farzoom-prod/login-actions/registration?client_id=account&amp;tab_id=thZdsanBohM" title="Вход c сертификатом ЭП">Вход c сертификатом ЭП</a>
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

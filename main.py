@@ -17,12 +17,13 @@ def main():
 
     # auth
     resp = session.post(login, {
-        'login': 'ip_gorchakovnn',
-        'password': 'Qwerty6307'})
+        'login': '',
+        'password': ''})
 
     # res
     with open('success_login.txt', 'w', encoding='utf-8') as f:
-        f.write(str(resp))
+        f.write(str(resp.text))
+    print(resp)
 
 
 if __name__ == "__main__":
