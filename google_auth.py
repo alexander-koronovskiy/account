@@ -1,19 +1,34 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+import yaml
 import time
 
 
 def main():
+    # wd activation
     driver = webdriver.Safari(executable_path='/usr/bin/safaridriver')
-    url = 'https://bg.alfabank.ru'
+    base_url = 'https://bg.alfabank.ru'
+    login = base_url + '/auth/realms/farzoom-prod/account'
+    driver.get(login)
 
-    driver.get('https://accounts.google.com')
-    email = driver.find_element_by_id('identifierId')
-    email.send_keys('hahaha')
-    next = driver.find_element_by_id('identifierNext')
-    next.click()
-    time.sleep(5)  # думал, может страница не успевает появиться, нет не в этом причина:(
-    passwd = driver.find_elements_by_name('password')
-    passwd.send_keys('*bzZ%tEDsFF6PKBP')
+    # yml data extract
+    a_yaml_file = open('config.yml')
+    config_file = yaml.load(a_yaml_file, Loader=yaml.FullLoader)
+    username = config_file['USER_ACCESS_KEY']
+    _secret_key = config_file['USER_SECRET_KEY']
+
+    # login
+    email = driver.find_element(By.ID, 'username')
+    email.send_keys(username)
+    passwd = driver.find_element(By.ID, 'password')
+    passwd.send_keys(_secret_key)
+
+    # submit
+    btn = driver.find_element(By.ID, 'kc-login')
+    btn.click()
+
+    time.sleep(50)
+    driver.close()
 
 
 if __name__ == "__main__":
