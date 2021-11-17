@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import yaml
-import time
+from time import sleep
 
 
 def main():
@@ -27,7 +27,13 @@ def main():
     btn = driver.find_element(By.ID, 'kc-login')
     btn.click()
 
-    time.sleep(50)
+    # redirect
+    sleep(5)
+    tasks = base_url + '/tasks'
+    driver.get(tasks)
+
+    # close
+    sleep(10)
     driver.close()
 
 
