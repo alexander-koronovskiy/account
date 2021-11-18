@@ -21,7 +21,7 @@ def main():
         'password': ''})
 
     # res
-    with open('success_login.txt', 'w', encoding='utf-8') as f:
+    with open('task_0.json', 'w', encoding='utf-8') as f:
         f.write(str(resp.text))
     print(resp)
 

@@ -4,3 +4,5 @@ lxml
 selenium
 pytest
 PyYaml
+flask
+flask_restful

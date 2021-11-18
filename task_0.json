@@ -1,0 +1,20 @@
+{
+  "org_inn": "string",
+  "bg_type": "int",
+  "order_number": "string",
+  "auction_type": "int",
+  "auction_url": "string",
+  "auction_date": "YYYY-MM-DD",
+  "auction_goal": "string",
+  "auction_code": "string",
+  "guaranty_date": "YYYY-MM-DD",
+  "guaranty_period": "YYYY-MM-DD",
+  "guaranty_amount": "float",
+  "guaranty_amount_release": "float",
+  "lots": [
+    {
+      "number": "int",
+      "amount": "float"
+    }
+  ]
+}
