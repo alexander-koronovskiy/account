@@ -1,0 +1,20 @@
+{
+  "org_inn": "6439083029",
+  "bg_type": "Сведения о банковской гарантии",
+  "order_number": "Реестровый номер торгов",
+  "auction_type": "Тип аукциона",
+  "auction_url": "Ссылка на тендер в интернете",
+  "auction_date": "2021-11-20",
+  "auction_goal": "Предмет закупки",
+  "auction_code": "Идентификационный код закупки",
+  "guaranty_date": "2021-11-23",
+  "guaranty_period": "2022-05-23",
+  "guaranty_amount": "float",
+  "guaranty_amount_release": "float",
+  "lots": [
+    {
+      "number": "int",
+      "amount": "float"
+    }
+  ]
+}
