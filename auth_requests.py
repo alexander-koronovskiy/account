@@ -9,9 +9,9 @@ from time import sleep
 def main():
     # wd activation
     driver = webdriver.Safari(executable_path='/usr/bin/safaridriver')
-    base_url = 'https://bg.alfabank.ru'
-    login = base_url + '/auth/realms/farzoom-prod/account'
-    tasks = base_url + '/tasks'
+    base_url = 'https://platonus.nnsoft.kz'
+    login = base_url + '/template.html#/welcome'
+    tasks = base_url + '/'
 
     # login data extract
     a_yaml_file = open('config.yml')
@@ -25,32 +25,12 @@ def main():
 
     # login
     driver.get(login)
-    email = driver.find_element(By.ID, 'username')
+    email = driver.find_element(By.ID, 'iin_input')
     email.send_keys(username)
-    passwd = driver.find_element(By.ID, 'password')
+    passwd = driver.find_element(By.ID, 'pass_input')
     passwd.send_keys(_secret_key)
-    driver.find_element(By.ID, 'kc-login').click()
-    sleep(3)
-
-    # redirect
-    driver.get(tasks)
-    sleep(3)
-    driver.find_element(By.CLASS_NAME, 'btn-options__link').click()
-    sleep(3)
-    driver.find_element(By.CLASS_NAME, 'modal-menu__item').click()
-    sleep(3)
-
-    # fill the forms
-    driver\
-        .find_element(By.CLASS_NAME, 'fzp-company__autocomplete')\
-        .send_keys(new_task['org_inn'])
-    sleep(3)
-    driver \
-        .find_element(By.CLASS_NAME, 'suggestions-container') \
-        .click()
-    Select(driver.find_element(By.XPATH, '//select[@ng-model="model.data.bankGuaranteeTypeRefId"]')) \
-        .select_by_visible_text('Обеспечение заявки на участие в торгах')
-    sleep(3)
+    driver.find_element(By.ID, 'pass-status').click()
+    sleep(5)
 
     # close
     print(driver.page_source)
